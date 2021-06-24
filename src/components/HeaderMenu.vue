@@ -13,14 +13,14 @@
       <template v-for="(menu, index) in menus">
         
         <el-submenu v-if="menu.subMenus && menu.subMenus.length > 0" :key="index">
-          <template slot="title">{{ menu.name }} </template>
+          <template slot="title">{{ $t(menu.name) }} </template>
           <el-menu-item v-for="(subMenu, index2) in menu.subMenus" :key="index2" :index="subMenu.path">
-            {{ subMenu.name }}
+            {{ $t(subMenu.name) }}
           </el-menu-item>
         </el-submenu>
 
         <el-menu-item v-else :key="index" :index="menu.path">
-          {{ menu.name }}
+          {{ $t(menu.name) }}
         </el-menu-item>
       </template>
 
@@ -42,27 +42,27 @@ export default {
       menus: [
         {
           path: "/dashboard",
-          name: "首页"
+          name: "menu.dashboard"
         },
         {
           path: "/cases",
-          name: "案件列表"
+          name: "menu.cases"
         },
         {
           path: "/report",
-          name: "绩效报表"
+          name: "menu.report"
         },
         {
           path: "/collectors",
-          name: "催收员管理"
+          name: "menu.collectors"
         },
         {
           path: "",
-          name: "系统管理",
+          name: "menu.system",
           subMenus: [
             {
               path: "/system/role",
-              name: "角色管理",
+              name: "menu.systemRole",
             },
           ],
         },

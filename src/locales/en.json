@@ -6,5 +6,15 @@
       "label-password": "Password",
       "btn-sumbit": "Login"
     }
+  },
+
+
+  "menu": {
+    "dashboard": "Dashboard",
+    "cases": "Cases",
+    "report": "Report",
+    "collectors": "Collectors",
+    "system": "System",
+    "systemRole": "System Role"
   }
 }
