@@ -14,6 +14,8 @@
     "report": "报表",
     "collectors": "催收员管理",
     "system": "系统管理",
-    "systemRole": "角色管理"
+    "systemRole": "角色管理",
+    "changeLanguage": "切换语言",
+    "profile": "个人中心"
   }
 }

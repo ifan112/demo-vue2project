@@ -25,7 +25,11 @@
       </template>
 
       <el-menu-item index="/profile" style="float: right; margin-right: 12px">
-          个人中心
+          {{ $t('menu.profile') }}
+      </el-menu-item>
+
+      <el-menu-item @click="changeLanguage" style="float: right; margin-right: 12px">
+          {{ $t('menu.changeLanguage')}}
       </el-menu-item>
     </el-menu>
   </div>
@@ -33,6 +37,8 @@
 
 
 <script>
+import i18n from "@locales/i18n";
+
 export default {
   name: "HeaderMenu",
 
@@ -74,6 +80,9 @@ export default {
     handleSelect() {
       console.log("Menu click");
     },
+    changeLanguage() {
+      i18n.locale = 'zh'
+    }
   },
 };
 </script>
