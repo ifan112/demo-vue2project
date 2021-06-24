@@ -16,7 +16,7 @@
       </el-form-item>
     </el-form>
 
-    <el-button type="primary" @click="changeLocale">切换语言</el-button>
+    <el-button type="primary" @click="changeLocaleLanguage">切换语言</el-button>
   </div>
 </template>
 
@@ -35,8 +35,18 @@ export default {
   },
 
   methods: {
-    changeLocale() {
-      i18n.locale = "zh";
+    changeLocaleLanguage() {
+      const localeLanguage = localStorage.getItem('localeLanguage')
+      console.log(localeLanguage)
+
+      if (localeLanguage === 'zh') {
+        localStorage.setItem('localeLanguage', 'en')
+        i18n.locale = 'en'
+      }
+      if (localeLanguage === null || localeLanguage === 'en') {
+        localStorage.setItem('localeLanguage', 'zh')
+        i18n.locale = 'zh'
+      }
     },
 
     submitLogin() {
