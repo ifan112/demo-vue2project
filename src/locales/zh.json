@@ -1,0 +1,10 @@
+{
+  "message": "这是来自i18n的值",
+  "page": {
+    "login": {
+      "label-username": "用户名",
+      "label-password": "密码",
+      "btn-sumbit": "登录"
+    }
+  }
+}

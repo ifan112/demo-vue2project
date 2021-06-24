@@ -1,0 +1,10 @@
+{
+  "message": "hello i18n !!",
+  "page": {
+    "login": {
+      "label-username": "Username",
+      "label-password": "Password",
+      "btn-sumbit": "Login"
+    }
+  }
+}
