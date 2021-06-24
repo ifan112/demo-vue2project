@@ -10,7 +10,7 @@
         <img src="../assets/logo.png" height="32px" />
       </el-menu-item>
 
-      <template v-for="(menu, index) in menus">
+      <template v-for="(menu, index) in menus[0].children">
         
         <el-submenu v-if="menu.subMenus && menu.subMenus.length > 0" :key="index" :index="menu.path">
           <template slot="title">{{ $t(menu.name) }} </template>
@@ -45,34 +45,36 @@ export default {
   data() {
     return {
       activeIndex: "dashboard",
-      menus: [
-        {
-          path: "/dashboard",
-          name: "menu.dashboard"
-        },
-        {
-          path: "/cases",
-          name: "menu.cases"
-        },
-        {
-          path: "/report",
-          name: "menu.report"
-        },
-        {
-          path: "/collectors",
-          name: "menu.collectors"
-        },
-        {
-          path: "",
-          name: "menu.system",
-          subMenus: [
-            {
-              path: "/system/role",
-              name: "menu.systemRole",
-            },
-          ],
-        },
-      ],
+      // menus: this.$router.options.routes
+      menus: JSON.parse(localStorage.getItem('routesRequirePermission'))
+      // menus: [
+      //   {
+      //     path: "/dashboard",
+      //     name: "menu.dashboard"
+      //   },
+      //   {
+      //     path: "/cases",
+      //     name: "menu.cases"
+      //   },
+      //   {
+      //     path: "/report",
+      //     name: "menu.report"
+      //   },
+      //   {
+      //     path: "/collectors",
+      //     name: "menu.collectors"
+      //   },
+      //   {
+      //     path: "",
+      //     name: "menu.system",
+      //     subMenus: [
+      //       {
+      //         path: "/system/role",
+      //         name: "menu.systemRole",
+      //       },
+      //     ],
+      //   },
+      // ],
     };
   },
 
