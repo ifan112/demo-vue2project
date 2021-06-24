@@ -1,12 +1,13 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    
-    <h1> Home </h1>
-    
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-
-    <router-view />
+    <el-container>
+      <el-header>
+        <HeaderMenu />
+      </el-header>
+      <el-main>
+        <router-view />
+      </el-main>
+    </el-container>
   </div>
 </template>
 
@@ -14,10 +15,21 @@
 // @ is an alias to /src
 // import HelloWorld from '@/components/HelloWorld.vue'
 
+import HeaderMenu from '@/components/HeaderMenu.vue'
+
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     // HelloWorld
-  }
-}
+    HeaderMenu
+  },
+};
 </script>
+
+<style>
+
+.el-header {
+  padding: 0px;
+}
+
+</style>
