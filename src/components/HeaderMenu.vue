@@ -3,7 +3,7 @@
     <el-menu
       :default-active="activeIndex"
       mode="horizontal"
-      router="true"
+      router
       @select="handleSelect">
 
       <el-menu-item>
@@ -12,7 +12,7 @@
 
       <template v-for="(menu, index) in menus">
         
-        <el-submenu v-if="menu.subMenus && menu.subMenus.length > 0" :key="index">
+        <el-submenu v-if="menu.subMenus && menu.subMenus.length > 0" :key="index" :index="menu.path">
           <template slot="title">{{ $t(menu.name) }} </template>
           <el-menu-item v-for="(subMenu, index2) in menu.subMenus" :key="index2" :index="subMenu.path">
             {{ $t(subMenu.name) }}
